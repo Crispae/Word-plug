@@ -39,7 +39,7 @@
   "dependencies": {
     "@fluentui/react": "^8.121.13",
     "@fluentui/react-components": "^9.46.8",
-    "@fluentui/react-icons": "^2.0.232",
+    "@fluentui/react-icons": "^2.0.267",
     "core-js": "^3.36.0",
     "es6-promise": "^4.2.8",
     "react": "^18.2.0",

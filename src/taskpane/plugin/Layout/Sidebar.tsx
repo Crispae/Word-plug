@@ -4,6 +4,7 @@ import MainContent from "./MainContent";
 import AddCitation from "../Plugins/AddCitation";
 import AnonymizeAuthor from "../Plugins/AnonymizeAuthor";
 import AddImages from "../Plugins/AddImages";
+import Settings from "../Plugins/Settings";
 
 const navStyles: Partial<INavStyles> = {
   root: {
@@ -43,7 +44,7 @@ const Sidebar = () => {
           links: [
             { name: "Add Citation", url: "#", key: "addCitation", icon: "InsertTextBox" },
             { name: "Anonymize Author", url: "#", key: "anonymizeAuthor", icon: "Hide" },
-            { name: "Add Images", url: "#", key: "addImages", icon: "Photo2Add" },
+            { name: "Add Templates", url: "#", key: "addImages", icon: "Photo2Add" },
           ],
         },
         { name: "Settings", url: "#", key: "settings", icon: "Settings" },
@@ -59,8 +60,11 @@ const Sidebar = () => {
         return <AnonymizeAuthor />;
       case "addImages":
         return <AddImages />;
+      case "settings":
+        return <Settings />;
       default:
-        return <MainContent text="Home content goes here." />;
+        return <MainContent  />;
+
     }
   };
 

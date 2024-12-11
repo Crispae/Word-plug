@@ -1,10 +1,27 @@
 import React from "react";
+import { Icon, FontIcon } from '@fluentui/react';
+import AnonymizeAuthor from "../Plugins/AnonymizeAuthor";
 
-const MainContent: React.FC<{ text: string }> = ({ text }) => {
+const MainContent: React.FC = () => {
   const pluginInfo = [
-    "Add Citation: Easily insert references and citations in your documents.",
-    "Anonymize Author: Protect identities by anonymizing author information.",
-    "Add Images: Enhance your content by adding images seamlessly.",
+    {
+      icon: <Icon iconName="InsertTextBox" />
+      ,
+      label: "Add Citation",
+      description: "Easily insert references and citations in your documents.",
+    },
+    {
+      icon:<Icon iconName="Hide" />
+      ,
+      label: "Anonymize Author",
+      description: "Hide the author's identity to ensure anonymity.",
+    },
+    {
+      icon: <Icon iconName="Photo2Add" />
+      ,
+      label: "Insert Templates",
+      description: "Quickly insert pre-defined templates into your documents.",
+    },
   ];
 
   return (
@@ -20,17 +37,22 @@ const MainContent: React.FC<{ text: string }> = ({ text }) => {
 
       {/* Main Text */}
       <div style={{ textAlign: "center", marginBottom: "20px" }}>
-        <h1 style={{ fontSize: "24px", fontWeight: "bold", marginBottom: "10px" }}>Welcome to the App!</h1>
-        <p style={{ fontSize: "16px", color: "#555" }}>{text}</p>
+        <h1 style={{ fontSize: "24px", fontWeight: "bold", marginBottom: "10px" }}>Office-plugins</h1>
       </div>
 
       {/* Plugins Information */}
       <div style={{ maxWidth: "600px", textAlign: "left" }}>
-        <h2 style={{ fontSize: "20px", marginBottom: "10px" }}>Available Plugins:</h2>
         <ul style={{ paddingLeft: "20px", fontSize: "16px", color: "#333" }}>
           {pluginInfo.map((info, index) => (
-            <li key={index} style={{ marginBottom: "8px" }}>
-              {info}
+            <li key={index} style={{ marginBottom: "16px", display: "flex", alignItems: "center" }}>
+              
+              <div >
+                <span style={{ marginRight: "10px", fontSize: "20px" }}>{info.icon}</span>
+                <strong>{info.label}</strong>
+                <p style={{ margin: "5px 0 0", fontSize: "14px", color: "#555" }}>{info.description}</p>
+              </div>
+
+
             </li>
           ))}
         </ul>
